@@ -1,0 +1,34 @@
+[
+    {
+        "type": "0",
+        "name": "salary"
+    },
+    {
+        "type": "0",
+        "name": "bonuses"
+    },
+    {
+        "type": "0",
+        "name": "overtime"
+    },
+    {
+        "type": "1",
+        "name": "food"
+    },
+    {
+        "type": "1",
+        "name": "drinks"
+    },
+    {
+        "type": "1",
+        "name": "shopping"
+    },
+    {
+        "type": "1",
+        "name": "housing"
+    },
+    {
+        "type": "1",
+        "name": "transportation"
+    }
+]

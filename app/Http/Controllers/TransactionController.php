@@ -42,12 +42,7 @@ class TransactionController extends Controller
             'amount'=>'required',
             'note'=>'required',
         ]);
-        Transaction::query()->create([
-            'category_id' => $request->category_id,
-            'amount' => $request->amount,
-            'note'=>$request->note,
-            'user_id' => Auth::id(),
-        ]);
+        $transaction =  Transaction::query();
 
         $category = Category::find($request->category_id);
 
@@ -56,6 +51,12 @@ class TransactionController extends Controller
         {
             if ($category->type == '0')
             {
+                $transaction->create([
+                    'category_id' => $request->category_id,
+                    'amount' => $request->amount,
+                    'note'=>$request->note,
+                    'user_id' => Auth::id(),
+                ]);
 
                 $wallet_income = $wallet->first()->total_income + $request->amount;
                 $wallet_balance = $wallet->first()->wallet_balance + $request->amount;
@@ -72,6 +73,12 @@ class TransactionController extends Controller
             {
                 if ($wallet->first()->wallet_balance >= $request->amount )
                 {
+                    $transaction->create([
+                        'category_id' => $request->category_id,
+                        'amount' => $request->amount,
+                        'note'=>$request->note,
+                        'user_id' => Auth::id(),
+                    ]);
                     $total_expenses = $wallet->first()->total_expenses + $request->amount;
                     $wallet_balance = $wallet->first()->wallet_balance - $request->amount;
 
@@ -91,6 +98,12 @@ class TransactionController extends Controller
         {
             if ($category->type == '0')
             {
+                $transaction->create([
+                    'category_id' => $request->category_id,
+                    'amount' => $request->amount,
+                    'note'=>$request->note,
+                    'user_id' => Auth::id(),
+                ]);
                 $wallet->create([
                     'wallet_balance'=>$request->amount,
                     'total_income'=>$request->amount,

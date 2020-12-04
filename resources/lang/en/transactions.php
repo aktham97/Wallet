@@ -10,6 +10,12 @@
 return [
   'type'=>'Category Type',
     'name'=>'Category Name',
+    'wallet_balance'=>'Wallet Balance',
+    'total_income'=>'Total Income',
+    'total_expenses'=>'Total Expenses',
+    'category_id'=>'Category Name',
+    'amount'=>'Amount',
+    'note'=>'Note',
     'submit'=>'Submit'
 
 ];

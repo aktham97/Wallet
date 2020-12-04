@@ -13,7 +13,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <table class="table">
+                            <table class="table table-striped table-dark">
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -36,7 +36,7 @@
                             <br>
 
 
-                        <table class="table">
+                        <table class="table table-striped table-dark">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>

@@ -26,10 +26,14 @@
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->country_code.'-'.$user->phone_code}}</td>
-                                <td>{{$user->birthdate}}</td>
+                                @if($user->birthdate == null)
+                                <td>No Data</td>
+                                @else
+                                    <td>{{$user->birthdate}}</td>
+                                @endif
                                 @if($user->wallet == null)
-                                    <td>Null</td>
-                                <td>Null</td>
+                                    <td>No Data</td>
+                                <td>No data</td>
                                 @else
                                 <td>{{$user->wallet->total_expenses}}</td>
                                 <td>{{$user->wallet->total_income}}</td>

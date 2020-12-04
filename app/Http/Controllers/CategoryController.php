@@ -40,7 +40,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        Category::query()->create([
+       $validate=  $request->validate([
+            'type'=>'required',
+            'name'=>'required',
+        ]);
+       dd($validate);
+        Category::query()->firstOrCreate([
             'type' => $request->type,
             'name' => $request->name,
             'user_id' => Auth::id()

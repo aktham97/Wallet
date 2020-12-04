@@ -23,6 +23,12 @@
                                     <option value="0">Income</option>
                                     <option value="1">Expenses</option>
                                 </select>
+                                @error('type')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
                             <div class="form-group">
                                 <label for="name">{{trans('category.name')}}</label>
